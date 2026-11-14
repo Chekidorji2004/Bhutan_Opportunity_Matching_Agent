@@ -6,3 +6,4 @@ langgraph
 pydantic
 matplotlib
 scikit-learn
+openai>=1.0.0
