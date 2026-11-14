@@ -1,0 +1,23 @@
+
+# Virtual environment
+venv/
+.venv/
+
+# API keys and secrets
+.env
+.streamlit/secrets.toml
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Database files
+*.db
+*.sqlite3
+
+# Editor and system files
+.vscode/
+.DS_Store
+
+# Generated evaluation files
+evaluation/results/

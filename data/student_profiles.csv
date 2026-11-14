@@ -1,0 +1,5 @@
+
+student_id,name,citizenship,education_level,degree,field_of_study,year_of_study,gpa,skills,interests,preferred_opportunity_type,preferred_location,preferred_mode,career_goal
+07230000,Cheki Dorji,Bhutanese,Undergraduate,BSc,Data Science and Data Analytics,3,3.5,Python;Pandas;Machine Learning;Data Analysis,Artificial Intelligence;Data Science;Research,Internship,Bhutan;International,Any,Become a Data Scientist
+07230001,Dorji Penjor,Bhutanese,Undergraduate,BSc,Computer Science,2,3.2,Python;Java;Web Development,Software Engineering;AI,Internship,Bhutan;Remote,Any,Become a Software Engineer
+07230002,Sonam Choden,Bhutanese,Undergraduate,BSc,Statistics,3,3.7,R;Python;Data Visualisation;Excel,Statistics;Research;Data Analytics,Scholarship,International,Any,Pursue postgraduate studies

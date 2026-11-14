@@ -1,0 +1,6 @@
+
+test_id,student_id,user_prompt,expected_intent,actual_intent,selected_tool,execution_success,response_quality,result
+L01,07230000,Find me data science internships in Bhutan.,search_opportunities,,,,,NOT TESTED
+L02,07230001,Am I eligible for DEMO003?,check_eligibility,,,,,NOT TESTED
+L03,07230002,Create an application plan for DEMO001.,application_plan,,,,,NOT TESTED
+L04,07230000,Which opportunities have approaching deadlines?,deadline_check,,,,,NOT TESTED

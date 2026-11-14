@@ -1,0 +1,13 @@
+﻿test_id,category,student_id,test_action,input_value,expected_result,purpose
+T01,profile,07230000,profile_exists,,True,Check that the first demo student profile loads.
+T02,profile,07230001,profile_exists,,True,Check that the second demo student profile loads.
+T03,profile,07230002,profile_exists,,True,Check that the third demo student profile loads.
+T04,search,,internship_bhutan,,at_least_one,Search internship opportunities in Bhutan.
+T05,search,,scholarships,,at_least_one,Search scholarship opportunities.
+T06,eligibility,07230000,eligibility,DEMO003,ELIGIBLE,Data Science student should meet DEMO003's stated rules.
+T07,eligibility,07230001,eligibility,DEMO003,ELIGIBLE,Computer Science student should meet DEMO003's stated rules.
+T08,eligibility,07230002,eligibility,DEMO003,NOT ELIGIBLE,Statistics is not listed among DEMO003's eligible fields in the demo data.
+T09,ranking,07230000,ranking,,scores_0_to_100,Check that ranking scores are valid and results are sorted.
+T10,application,07230000,application_plan,DEMO001,success,Generate an application checklist for a valid opportunity and student.
+T11,deadline,,deadline_rules,,URGENT_HIGH_MEDIUM_LOW_EXPIRED_UNKNOWN,Check deadline categories using fixed dates.
+T12,memory,,memory_isolation,,isolated,Check that student interaction histories remain separate.
