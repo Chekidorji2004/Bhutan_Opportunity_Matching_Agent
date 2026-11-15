@@ -31,28 +31,19 @@ from src.tools.opportunity_tools import (
     search_opportunities
 )
 
-# ---------------------------------------------------------------------
-# OpenRouter client (configuration comes from the .env file)
-# ---------------------------------------------------------------------
+# Load the OpenRouter API key
+try:
+    api_key = st.secrets["OPENROUTER_API_KEY"]
+except (KeyError, FileNotFoundError):
+    api_key = os.getenv("OPENROUTER_API_KEY")
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if not api_key:
+    raise ValueError("OpenRouter API key not found.")
 
-load_dotenv(PROJECT_ROOT / ".env", override=True)
-
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-OPENROUTER_MODEL = os.getenv(
-    "OPENROUTER_MODEL",
-    "openrouter/free"
-)
-
-if not OPENROUTER_API_KEY:
-    raise ValueError(
-        "OpenRouter API key not found. Check your .env file."
-    )
-
+# Initialise OpenRouter client
 client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key=OPENROUTER_API_KEY
+    api_key=api_key,
+    base_url="https://openrouter.ai/api/v1"
 )
 
 
