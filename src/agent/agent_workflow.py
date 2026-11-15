@@ -9,6 +9,7 @@ import os
 import re
 from pathlib import Path
 from typing import TypedDict
+import streamlit as st
 
 import pandas as pd
 from dotenv import load_dotenv
@@ -31,23 +32,36 @@ from src.tools.opportunity_tools import (
     search_opportunities
 )
 
-# Load the OpenRouter API key
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+# Load local .env file
+load_dotenv(PROJECT_ROOT / ".env", override=False)
+
+# Get API key from Streamlit Secrets first, then local environment
 try:
-    api_key = st.secrets["OPENROUTER_API_KEY"]
-except (KeyError, FileNotFoundError):
-    api_key = os.getenv("OPENROUTER_API_KEY")
+    OPENROUTER_API_KEY = st.secrets.get(
+        "OPENROUTER_API_KEY",
+        os.getenv("OPENROUTER_API_KEY")
+    )
+except (FileNotFoundError, AttributeError):
+    OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-if not api_key:
-    raise ValueError("OpenRouter API key not found.")
-
-# Initialise OpenRouter client
-client = OpenAI(
-    api_key=api_key,
-    base_url="https://openrouter.ai/api/v1"
+OPENROUTER_MODEL = os.getenv(
+    "OPENROUTER_MODEL",
+    "openrouter/free"
 )
 
+if not OPENROUTER_API_KEY:
+    raise ValueError(
+        "OpenRouter API key not found. "
+        "Configure OPENROUTER_API_KEY in Streamlit Secrets "
+        "or your local .env file."
+    )
 
-
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=OPENROUTER_API_KEY
+)
 
 # ---------------------------------------------------------------------
 # Request understanding
