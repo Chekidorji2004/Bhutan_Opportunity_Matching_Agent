@@ -389,7 +389,7 @@ Potential improvements include:
 
 The application is deployed using Streamlit Community Cloud.
 
-**Live Application:** [https://bhutanopportunitymatchingagent-fyjpwbzgnfjyduegtxyai3.streamlit.app/]
+**Live Application:** https://bhutanopportunitymatchingagent-fyjpwbzgnfjyduegtxyai3.streamlit.app/
 
 **GitHub Repository:** [Bhutan Opportunity Matching Agent](https://github.com/Chekidorji2004/Bhutan_Opportunity_Matching_Agent)
 
